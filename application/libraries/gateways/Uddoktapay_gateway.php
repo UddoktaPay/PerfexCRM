@@ -203,16 +203,17 @@ class Uddoktapay_gateway extends App_gateway
         $invoiceUrl = site_url('invoice/' . $data['invoice']->id . '/' . $data['invoice']->hash);
 
         if ($currency !== 'BDT') {
-            $amount *= $this->decryptSetting('exchange_rate');
+            $exchangedAmount *= $this->decryptSetting('exchange_rate');
         }
 
         $requestData = [
             'full_name'    => $contact->firstname . ' ' . $contact->lastname,
             'email'        => $contact->email,
-            'amount'       => $amount,
+            'amount'       => $exchangedAmount,
             'metadata'     => [
                 'invoice_id'  => $data['invoice']->id,
                 'webhook_key' => $webhookKey,
+                'amount' => $amount,
             ],
             'redirect_url' => $returnUrl,
             'return_type'  => 'GET',
