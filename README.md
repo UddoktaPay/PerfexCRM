@@ -6,12 +6,12 @@ To install the UddoktaPay Payment Module, follow these steps:
 
 ### Step 1: Download the Module
 
-Download [UddoktaPay.zip](https://github.com/uddoktapay/PerfexCRM/releases/download/1.0.0/UddoktaPay.zip) file from the **Release** section of this repository.
+Download [Source code (zip)](https://github.com/UddoktaPay/PerfexCRM/archive/refs/tags/1.0.1.zip) file from the **Release** section of this repository.
 
 ### Step 2: Upload to PerfexCRM
 
 1. Go to your PerfexCRM installation directory.
-3. Upload the downloaded `UddoktaPay.zip` file to this directory.
+3. Upload the downloaded file to this directory.
 4. Extract the contents of the zip file.
 
 Now, the UddoktaPay payment module is installed in your PerfexCRM.
