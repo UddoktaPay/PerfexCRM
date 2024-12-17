@@ -26,7 +26,7 @@ class Uddoktapay extends App_Controller
             if ($response['status'] === 'COMPLETED') {
                 // New payment
                 $this->uddoktapay_gateway->addPayment([
-                    'amount'        => $invoice->total,
+                    'amount'        => $response['metadata']['amount'],
                     'invoiceid'     => $invoice->id,
                     'paymentmethod' => $response['payment_method'],
                     'transactionid' => $response['transaction_id'],
@@ -73,7 +73,7 @@ class Uddoktapay extends App_Controller
             $invoice = $this->db->get(db_prefix() . 'invoices')->row();
             // New payment
             $this->uddoktapay_gateway->addPayment([
-                'amount'        => $invoice->total,
+                'amount'        => $response['metadata']['amount'],
                 'invoiceid'     => $invoice->id,
                 'paymentmethod' => $response['payment_method'],
                 'transactionid' => $response['transaction_id'],
